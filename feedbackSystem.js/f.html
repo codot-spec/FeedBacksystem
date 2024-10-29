@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback System</title>
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            text-align: center; /* Center align the headings */
+        }
+        .stars {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .feedback-list {
+            margin-top: 20px;
+            list-style: none;
+            padding: 0;
+        }
+        .feedback-list li {
+            margin: 10px 0;
+        }
+        .star-line {
+            display: flex;
+            justify-content: center; /* Center stars */
+            align-items: center;
+        }
+        .star-line .count {
+            margin-left: 10px; /* Spacing for count */
+        }
+    </style>
+</head>
+<body>
+
+<h1>Feedback System</h1>
+
+<h2>Overall Rating</h2>
+<div id="star-display">
+    <div class="star-line" data-rating="1">★<span class="count">0</span></div>
+    <div class="star-line" data-rating="2">★ ★<span class="count">0</span></div>
+    <div class="star-line" data-rating="3">★ ★ ★<span class="count">0</span></div>
+    <div class="star-line" data-rating="4">★ ★ ★ ★<span class="count">0</span></div>
+    <div class="star-line" data-rating="5">★ ★ ★ ★ ★<span class="count">0</span></div>
+</div>
+
+<h3>Feedback Form</h3>
+<form id="feedback-form" data-user-id="">
+    <label for="name">Enter Your Name:</label>
+    <input type="text" id="name" required>
+    
+    <label for="rating">Feedback Rating:</label>
+    <select id="rating" required>
+        <option value="">Select Rating</option>
+        <option value="1">1 Star</option>
+        <option value="2">2 Stars</option>
+        <option value="3">3 Stars</option>
+        <option value="4">4 Stars</option>
+        <option value="5">5 Stars</option>
+    </select>
+    
+    <button type="submit">Submit</button>
+</form>
+
+<h2>All Feedbacks</h2>
+<ul class="feedback-list"></ul>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
